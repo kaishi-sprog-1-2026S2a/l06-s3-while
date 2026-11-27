@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build while_test",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "while_test.c",
+                "-o",
+                "while_test"
+            ]
+        },
+        {
+            "label": "build do_while_test",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "do_while_test.c",
+                "-o",
+                "do_while_test"
+            ]
+        },
+        {
+            "label": "build all",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "Build all"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "build while_test",
+                "build do_while_test"
+            ]
+        }
+    ]
+}
